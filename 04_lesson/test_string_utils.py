@@ -1,5 +1,4 @@
 class StringUtils:
-   
 
     def capitalize(self, string: str) -> str:
        capitilize("skypro") -> "Skypro"
