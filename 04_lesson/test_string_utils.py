@@ -29,3 +29,45 @@ class StringUtils:
         if self.contains(string, symbol):
             string = string.replace(symbol, "")
         return string
+
+
+
+import string_utils.py from test_string_utils.py
+
+
+@pytest.mark.parametrize('input_text, output_text', [
+    ('Hello', 'Hello'),
+    ('hello', 'Hello'),
+    ('h', 'H'),
+    ('привет', 'Привет')
+    ])
+def test_capitilize_positive(input_text, output_text):
+    stringUtils = StringUtils()
+    assert stringUtils.capitilize(input_text) == output_text
+
+
+
+def test_to_list_with_delimiter_positive(input_text, delimiter, expected_output):
+    strings = StringUtils()
+    assert strings.to_list(input_text, delimiter) == expected_output
+
+
+
+
+@pytest.mark.parametrize('list, output_list', [
+    (["", "", "", ""], ",,,"),
+    ([" ", " ", " ", " "], " , , , "),
+    ])
+def test_list_to_string_negative(list, output_list):
+    stringUtils = StringUtils()
+    assert stringUtils.list_to_string(list) == output_list
+
+
+
+
+@pytest.fixture
+def sample_data():
+    return {"name": "Alice", "age": 30}
+
+def test_example(sample_data):
+    assert sample_data["name"] == "Alice"
