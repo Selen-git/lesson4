@@ -1,7 +1,7 @@
 class StringUtils:
 
     def capitalize(self, string: str) -> str:
-       capitilize("skypro") -> "Skypro"
+        capitilize("skypro") -> "Skypro"
         return string.capitalize()
 
     def trim(self, string: str) -> str:
