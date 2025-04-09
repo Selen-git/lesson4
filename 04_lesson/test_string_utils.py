@@ -1,97 +1,98 @@
-from string_utils import StringUtils
+from String_utils import StringUtils
 
 
-def test_capitalize_positive(self):
+string_ut = StringUtils()
+
+
+
+
+string_utils = StringUtils()
+
+import pytest
+
+@pytest.mark.positive
+@pytest.mark.parametrize("input_str, expected", [
+    ("skypro", "Skypro"),
+    ("hello world", "Hello world"),
+    ("python", "Python"),
+])
+def test_capitalize_positive1(input_str, expected):
+    assert string_utils.capitalize(input_str) == expected
+
+def test_capitalize_positive():
     input_string = 'hello'
     expected_output = 'Hello'
 
-    result = self.capitalize(input_string)
+    result = string_ut.capitalize(input_string)
 
-    self.assertEqual(result, expected_output) 
+    assert result == expected_output 
 
-def test_capitalize_negative(self):
+def test_capitalize_negative():
     input_string = 'World'
     expected_output = 'World'
 
-    result = self.capitalize(input_string)
+    result = string_ut.capitalize(input_string)
 
-    self.assertNotEqual(result, expected_output)
-
-
+    assert result == expected_output 
 
 
 
-def test_trim_positive(self):
-    input_string = '  example  '
+
+
+
+def test_trim_positive():
+    input_string = 'example'
     expected_output = 'example'
 
-    result = self.trim(input_string)
+    result = string_ut.trim(input_string)
 
-    self.assertEqual(result, expected_output)
+    assert result == expected_output
 
-def test_trim_negative(self):
-    input_string = 'text'
+def test_trim_negative():
+    input_string = '  text'
     expected_output = 'text'
 
-    result = self.trim(input_string)
+    result = string_ut.trim(input_string)
 
-    self.assertNotEqual(result, expected_output)
-
-
+    assert result == expected_output
 
 
 
-def test_contains_positive(self):
+
+
+def test_contains_positive():
     input_string = 'hello'
     symbol = 'e'
 
-    result = self.contains(input_string, symbol)
+    result = string_ut.contains(input_string, symbol)
 
-    self.assertTrue(result)
+    assert result == True
 
-def test_contains_negative(self):
+def test_contains_negative():
     input_string = 'world'
     symbol = 'a'
 
-    result = self.contains(input_string, symbol)
+    result = string_ut.contains(input_string, symbol)
 
-    self.assertFalse(result)
-
-
+    assert result == False
 
 
 
-def test_delete_symbol_positive(self):
+
+
+def test_delete_symbol_positive():
     input_string = 'hello'
     symbol = 'l'
     expected_output = 'heo'
 
-    result = self.delete_symbol(input_string, symbol)
+    result = string_ut.delete_symbol(input_string, symbol)
 
-    self.assertEqual(result, expected_output)
+    assert result == expected_output
 
-def test_delete_symbol_negative(self):
+def test_delete_symbol_negative():
     input_string = 'world'
     symbol = 'x'
 
-    result = self.delete_symbol(input_string, symbol)
+    result = string_ut.delete_symbol(input_string, symbol)
 
-    self.assertNotEqual(result, input_string)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    assert result == input_string
